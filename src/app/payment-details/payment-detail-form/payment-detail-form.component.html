@@ -1,0 +1,54 @@
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="service.formSubmitted" novalidate autocomplete="off">
+    <div class="">
+        <i (click)="refreshForm(form)" class="fa-solid fa-refresh fa-lg btn btn-warning refresh"></i>
+    </div>
+    <input type="hidden" name="paymentDetailId" [value]="service.formData.paymentDetailId">
+    <div class="form-group mt-3">
+        <label>Card Owner Name</label>
+        <input type="text" 
+        class="form-control" 
+        placeholder="Enter card owner name"
+        #cardOwnerName="ngModel"
+        name="cardOwnerName"
+        [(ngModel)]="service.formData.cardOwnerName"
+        required>
+    </div>
+    <div class="form-group mt-3">
+        <label>Card Number</label>
+        <input type="text" 
+        class="form-control" 
+        placeholder="Enter card number"
+        #cardNumber="ngModel"
+        name="cardNumber"
+        [(ngModel)]="service.formData.cardNumber"
+        required minlength="16" maxlength="16">
+    </div>
+    <div class="row">
+        <div class="form-group mt-3 col-6">
+            <label>Security Code</label>
+            <input type="password"
+            class="form-control"
+            placeholder="CVV"
+            #securityCode="ngModel"
+            name="securityCode"
+            [(ngModel)]="service.formData.securityCode"
+            required
+            minlength="3" maxlength="3">
+        </div>
+        <div class="form-group mt-3 col-6">
+            <label>Expiration Date</label>
+            <input type="text"
+            class="form-control"
+            placeholder="MM/YY"
+            #amount="ngModel"
+            name="expirationDate"
+            [(ngModel)]="service.formData.expirationDate"
+            required
+            minlength="5" maxlength="5">
+        </div>
+    </div>
+
+   <div class="d-grid">
+         <button type="submit" class="btn btn-success mt-3">Submit</button>
+   </div>
+</form>

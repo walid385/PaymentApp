@@ -1,0 +1,22 @@
+label{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+form input.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+
+form input.ng-valid.ng-touched{
+    border: 1px solid green;
+}
+
+form.submitted input.ng-invalid{
+    border: 1px solid red;
+}
+
+.refresh{
+    padding: 15px 30px;
+}
